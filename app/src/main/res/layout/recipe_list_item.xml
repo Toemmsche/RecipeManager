@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recipe_list_item_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/recipe_list_item_title"
+        android:text="Title"
+        android:textSize="25sp"
+        android:fontFamily="@string/font_family_condensed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
+    <TextView
+        android:id="@+id/recipe_list_item_date"
+        android:text="Date"
+        android:textSize="15sp"
+        android:fontFamily="@string/font_family_regular"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recipe_list_item_title"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+         />
+
+    <ToggleButton
+        android:id="@+id/recipe_list_item_favorite_btn"
+        style="?android:starStyle"
+        android:layout_width="40dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:background="#00ffffff"
+
+        android:textOn=""
+        android:textOff="" />
+
+
+</RelativeLayout>
