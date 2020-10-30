@@ -11,7 +11,7 @@ class Recipe  constructor(
     titleField : String,
     var duration : Duration = Duration.ofMinutes(0),
     var ingredients : MutableList<Ingredient> = ArrayList(),
-    var steps : MutableList<String> = ArrayList(),
+    var link : String = "",
     var addedOn : Date = Date(),
     var lastCooked : Date = Date(),
     var isFavorite : Boolean = false
@@ -30,7 +30,7 @@ class Recipe  constructor(
         val singleton  = Recipe("Carbonara",
             Duration.ofMinutes(30),
             mutableListOf(Ingredient.singleton),
-            mutableListOf("Boil water", "add noodles", "rinse") ,
+        "chefkoch.de",
             Date(),
             Date(),
             false)

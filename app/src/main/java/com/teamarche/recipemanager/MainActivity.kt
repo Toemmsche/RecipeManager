@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -78,6 +79,8 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 
     //Custom ViewAdapter for Recycler View
     class RecipeListAdapter(private val recipes : RecipeList)

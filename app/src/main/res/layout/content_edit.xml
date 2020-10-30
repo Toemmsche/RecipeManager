@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditRecipeActivity"
+    tools:showIn="@layout/activity_edit">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/recipe_edit_title"
+            android:hint="@string/recipe_title_hint"
+            android:textSize="15sp"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+        <EditText
+            android:id="@+id/recipe_edit_duration"
+            android:hint="@string/recipe_duration_hint"
+            android:textSize="15sp"
+            android:inputType="text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/recipe_edit_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/recipe_link_hint"
+        android:inputType="text"
+        android:textSize="15sp"/>
+
+
+    <LinearLayout
+        android:id="@+id/ingredient_list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/add_ingredient"/>
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_ingredient_btn"
+        android:text="@string/add_ingredient"
+        android:background="@color/colorPrimaryLight"/>
+    <Button
+        android:id="@+id/submit_recipe_btn"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_recipe"
+        android:textSize="15sp"
+        android:textColor="@color/cardview_light_background"
+        android:background="@drawable/round_btn" />
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_ingredient_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/add_ingredient_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:hint="@string/recipe_ingredient_hint"
+        android:textSize="15sp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/add_ingredient_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minWidth="100dp"
+        android:hint="@string/recipe_ingredient_quantity"
+        android:textSize="15sp"
+        android:inputType="numberDecimal"/>
+    <EditText
+        android:id="@+id/add_ingredient_unit"
+        android:layout_width="wrap_content"
+        android:minWidth="100dp"
+        android:layout_weight="1"
+        android:hint="@string/recipe_ingredient_unit"
+        android:textSize="15sp"
+        android:inputType="text"
+        android:layout_height="wrap_content" />
+</LinearLayout>

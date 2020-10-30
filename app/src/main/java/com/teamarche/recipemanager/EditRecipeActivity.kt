@@ -2,17 +2,23 @@ package com.teamarche.recipemanager
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_edit.*
+import kotlinx.android.synthetic.main.add_ingredient.*
+import kotlinx.android.synthetic.main.content_edit.*
 
 class EditRecipeActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        setContentView(activity_edity_layout)
-        if (intent.getBooleanExtra("isEditMode", false)) {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_edit)
+
+        add_ingredient_btn.setOnClickListener { view ->
+            LinearLayout.inflate(this, R.layout.add_ingredient, ingredient_list_layout)
 
         }
     }

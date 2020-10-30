@@ -22,6 +22,7 @@
         <activity
             android:name=".EditRecipeActivity"
             android:label="Edit Recipe"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity"/>
     </application>
 

@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/activity_edity_layout"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditRecipeActivity">
 
-    <EditText
-        android:id="@+id/recipe_edit_title"
-        android:hint="@string/recipe_title_hint"
-        android:textSize="15sp"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimaryLight">
 
-    <EditText
-        android:id="@+id/recipe_edit_duration"
-        android:hint="@string/recipe_duration_hint"
-        android:textSize="15sp"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        />
+    </com.google.android.material.appbar.AppBarLayout>
 
-</LinearLayout>
+    <include layout="@layout/content_edit"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

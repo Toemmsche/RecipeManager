@@ -4,4 +4,10 @@
     <string name="recipe_list_name">Recipes</string>
     <string name="recipe_title_hint">Title</string>
     <string name="recipe_duration_hint">Duration</string>
+    <string name="recipe_link_hint">URL to Recipe</string>
+    <string name="recipe_ingredient_hint">Name of Ingredient</string>
+    <string name="recipe_ingredient_quantity">How many?</string>
+    <string name="recipe_ingredient_unit">Unit</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="submit_recipe">Submit Recipe</string>
 </resources>
