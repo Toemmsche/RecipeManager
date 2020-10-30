@@ -17,6 +17,18 @@ class RecipeList(val items : MutableList<Recipe>  = ArrayList())  : Iterable<Rec
         }
     }
 
+    //Remove a recipe from the list
+    fun remove(r : Recipe) {
+        if (r in items) {
+            items.remove(r)
+            Repository.repo.delete(r)
+        }
+    }
+
+    fun removeAt(i : Int) {
+        remove(items[i])
+    }
+
     //Retunrs the object count
     fun size() = items.size
 
@@ -24,10 +36,5 @@ class RecipeList(val items : MutableList<Recipe>  = ArrayList())  : Iterable<Rec
     operator fun get(i : Int) : Recipe {
         return items[i]
     }
-
-    companion object {
-        val singleton = RecipeList(mutableListOf(Recipe.singleton))
-    }
-
 
 }

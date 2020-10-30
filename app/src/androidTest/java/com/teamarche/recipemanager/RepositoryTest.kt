@@ -23,13 +23,7 @@ import java.util.*
  */
 @RunWith(AndroidJUnit4::class)
 class RepositoryTest {
-    val dummyRecipe = Recipe("test",
-        Duration.ofMinutes(1),
-        mutableListOf(Ingredient.singleton),
-        mutableListOf("Step 1"),
-        Date(),
-        Date(),
-        false)
+    val dummyRecipe = Recipe("test")
 
 
     companion object {

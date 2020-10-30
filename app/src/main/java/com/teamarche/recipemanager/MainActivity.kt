@@ -20,7 +20,10 @@ import com.teamarche.recipemanager.model.RecipeList
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.recipe_list_item.*
 import kotlinx.android.synthetic.main.recipe_list_item.view.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recipeListManager : RecyclerView.LayoutManager
 
     companion object {
-        private lateinit var recipeList : RecipeList
+        lateinit var recipeList : RecipeList
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,8 +42,7 @@ class MainActivity : AppCompatActivity() {
         //set up repository
         Repository.repo = Repository(applicationContext)
         recipeList = Repository.repo.loadAll()
-        //Todo
-        Repository.repo.deleteAll()
+
 
         recipeListManager = LinearLayoutManager(this)
         recipeListAdapter = RecipeListAdapter(recipeList)
@@ -53,10 +55,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         add_recipe_fab.setOnClickListener { view ->
-
+            //Adding and Editing a Recipe use the same Activity
             val intent = Intent(this, EditRecipeActivity::class.java).apply {
                 putExtra("isEditMode", false)
-                putExtra("existingRecipe", "")
+                putExtra("existingRecipeIndex", "")
             }
             startActivity(intent)
         }
@@ -100,11 +102,17 @@ class MainActivity : AppCompatActivity() {
         //Binds a RecipeListItemholder to its corresponding content determined by its position in the dataset
         override fun onBindViewHolder(holder: RecipeListItemHolder, position: Int) {
             holder.relay.recipe_list_item_title.text = recipes[position].title
-            holder.relay.recipe_list_item_date.text = recipes[position].lastCooked.toString()
+            val sdf = SimpleDateFormat("dd-MM-yyyy")
+            holder.relay.recipe_list_item_date.text = "Last Cooked: " + (Date().time -recipes[position].lastCooked.time)/ (1000 * 60 * 60 * 24) + " days ago"
             holder.relay.recipe_list_item_favorite_btn.isChecked = recipes[position].isFavorite
 
             holder.relay.recipe_list_item_favorite_btn.setOnCheckedChangeListener{ btn, checked ->
                 recipes[position].isFavorite = checked
+            }
+
+            holder.relay.recipe_list_item_remove_btn.setOnClickListener { view ->
+                recipeList.removeAt(position)
+                this.notifyItemRemoved(position)
             }
         }
 

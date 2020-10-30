@@ -13,27 +13,23 @@ class Recipe  constructor(
     var ingredients : MutableList<Ingredient> = ArrayList(),
     var link : String = "",
     var addedOn : Date = Date(),
-    var lastCooked : Date = Date(),
-    var isFavorite : Boolean = false
+    var lastCooked : Date = Date()
 ) {
+
+    var isFavorite = false
+    set(value : Boolean) {
+        field = value
+        Repository.repo.update(this)
+    }
 
     var title = titleField
         private set
+
     //Rename a recipe
     fun rename(newName : String) {
         var old = title
         title = newName
         Repository.repo.rename(old, this)
-    }
-
-    companion object {
-        val singleton  = Recipe("Carbonara",
-            Duration.ofMinutes(30),
-            mutableListOf(Ingredient.singleton),
-        "chefkoch.de",
-            Date(),
-            Date(),
-            false)
     }
 
     override fun equals(other: Any?): Boolean {

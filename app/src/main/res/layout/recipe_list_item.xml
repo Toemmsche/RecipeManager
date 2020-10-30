@@ -33,6 +33,18 @@
         android:layout_alignParentBottom="true"
          />
 
+    <Button
+        android:id="@+id/recipe_list_item_remove_btn"
+        android:textSize="20sp"
+        android:text="❌"
+        android:background="@android:color/transparent"
+
+         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/recipe_list_item_favorite_btn"
+        android:layout_marginRight="15dp"/>
+
+
     <ToggleButton
         android:id="@+id/recipe_list_item_favorite_btn"
         style="?android:starStyle"
